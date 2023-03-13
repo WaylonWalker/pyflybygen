@@ -1,0 +1,11 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: e40d60d
+_src_path: /home/waylon/git/pytool-template
+author_github: waylonwalker
+author_name: Waylon Walker
+description: auto generate project specific pyflyby config
+package_name: pyflybygen
+package_title: Pyflybygen
+package_title_input: pyflybygen
+python_package: pyflybygen
+
