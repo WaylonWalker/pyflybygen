@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import more_itertools
+import pathspec
 import typer
 
 from pyflybygen.cli.common import verbose_callback
@@ -49,9 +50,14 @@ def main(
         help="show the log messages",
     ),
 ) -> None:
-    imports = more_itertools.flatten(
-        [get_imports(p.read_text()) for p in Path(".").glob("**/*.py")]
-    )
+
+    lines = []
+    if Path(".gitignore").exists():
+        lines.extend(Path(".gitignore").read_text().splitlines())
+    spec = pathspec.PathSpec.from_lines("gitwildmatch", lines)
+    files = Path(".").glob("**/*.py")
+    files = [file for file in files if not spec.match_file(str(file))]
+    imports = more_itertools.flatten([get_imports(p.read_text()) for p in files])
     print("\n".join(set(imports)))
 
 

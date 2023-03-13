@@ -30,8 +30,7 @@ dependencies = [
   "anyconfig",
   "tree_sitter_languages",
   'more_itertools',
-  'coverage',
-  'coverage-rich',
+  'pathspec',
 ]
 dynamic = ["version"]
 
@@ -58,6 +57,8 @@ dependencies = [
   "pytest-rich",
   "ruff",
   "black",
+  'coverage',
+  'coverage-rich',
 ]
 [tool.hatch.envs.default.scripts]
 test = "coverage run -m pytest"
