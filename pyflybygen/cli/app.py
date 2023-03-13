@@ -49,6 +49,10 @@ def main(
         callback=verbose_callback,
         help="show the log messages",
     ),
+    relative_imports: bool = typer.Option(
+        False,
+        help="include relative imports",
+    ),
 ) -> None:
 
     lines = []
@@ -58,6 +62,8 @@ def main(
     files = Path(".").glob("**/*.py")
     files = [file for file in files if not spec.match_file(str(file))]
     imports = more_itertools.flatten([get_imports(p.read_text()) for p in files])
+    if not relative_imports:
+        imports = [i for i in imports if "from ." not in i]
     print("\n".join(set(imports)))
 
 
