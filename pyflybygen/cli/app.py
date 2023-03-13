@@ -54,7 +54,6 @@ def main(
         help="include relative imports",
     ),
 ) -> None:
-
     lines = []
     if Path(".gitignore").exists():
         lines.extend(Path(".gitignore").read_text().splitlines())
