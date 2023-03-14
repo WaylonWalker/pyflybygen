@@ -2,8 +2,8 @@
 
 Generates pyflyby configurations for your project based on existing imports.
 
-[![PyPI - Version](https://img.shields.io/pypi/v/{{ package_name }}.svg)](https://pypi.org/project/{{ package_name }})
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{ package_name }}.svg)](https://pypi.org/project/{{ package_name }})
+[![PyPI - Version](https://img.shields.io/pypi/v/pyflybygen.svg)](https://pypi.org/project/pyflybygen)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pyflybygen.svg)](https://pypi.org/project/pyflybygen)
 
 ---
 

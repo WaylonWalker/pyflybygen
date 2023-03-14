@@ -1,5 +1,7 @@
 from pathlib import Path
 
+from .pyflybygen import pyflybygen
+
 statements = """
 from __future__ import (absolute_import,
                         division)
